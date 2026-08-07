@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu acordiont</title>
+
+    <style>
+        body  {
+            font-family: Arial, Helvetica, sans-serif;
+            width: 400px;
+            margin: auto;
+        }
+
+        input {
+            display:  none;
+        }
+
+        label {
+            display: block;
+            background: #333;
+            color: white;
+            padding: 15px;
+            cursor: pointer;
+
+        }
+
+        .conteudo{
+            max-height: 0;
+            overflow: hidden;
+            background: #eee;
+            color: white;
+            padding: 15px;
+            cursor: pointer;
+        }
+
+        /* desafio: criar funcionalidade css para abrir
+        e fechar o menu */
+
+        input:cheked +  + ? {
+            ?
+            ?
+        }
+    </style>
+
+  </head>
+  <body>
+    <input type="radio" name="menu" id="sec1" />
+    <label for="sec1">Seção 1</label>
+    <div class="conteudo">Conteudo da seÇão 1</div>
+
+    <input type="radio" name="menu" id="sec2" />
+    <label for="sec1">Seção 2</label>
+    <div class="conteudo">Conteudo da seção 2</div>
+
+    <input type="radio" name="menu" id="sec3" />
+    <label for="sec1">Seção 3</label>
+    <div class="conteudo">Conteudo da seÇão 3</div>
+  </body>
+</html>
