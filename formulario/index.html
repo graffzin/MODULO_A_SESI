@@ -1,29 +1,84 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="=pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Formulário de Validação</title>
-</head>
-<body>
+
+    <style>
+        /* criar estilo para o formulario, contendo cores, espacamentos e posicao */
+        body {
+            display: flex;
+            background: -webkit-linear-gradient(90deg, #054c76,#0c192a,#471c3a);background: linear-gradient(90deg, #054c76,#0c192a,#471c3a);
+        }
+
+        input{
+
+        }
+
+        {
+
+        }
+    </style>
+  </head>
+  <body>
     <form>
-        <input type="text" id="nome" placeholder="Nome">
-        <p id="errorName" ></p>
+      <input type="text" id="nome" placeholder="Nome" />
+      <p id="errorName"></p>
 
-        <input type="email" id="email" placeholder="Email">
-        <p id="errorEmail"></p>
+      <input type="email" id="email" placeholder="Email" />
+      <p id="errorEmail"></p>
 
-        <input type="password" id="password" placeholder="Senha">
-        <p id="errorSenha"></p>
+      <input type="password" id="senha" placeholder="Senha" />
+      <p id="errorSenha"></p>
 
-        <button id="botao" disabled>Enviar</button>''
+      <button id="botao" disabled>Enviar</button>''
     </form>
 
     <script>
-        const nome = document.getElementById("nome");
-        const email = document.getElementsById("email");
-        const senha = document.getElementsById("senha");
-        const botao = document.getElementsById("botao");
+      const nome = document.getElementById("nome");
+      const email = document.getElementsById("email");
+      const senha = document.getElementsById("senha");
+      const botao = document.getElementsById("botao");
+
+      // expressoes regulares para email e senha
+      const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const regexSenha = /^(?=,*[a-zA-Z])(?=,*[\W_]).{8,}$/;
+
+      // funcao para validar formulario
+      function validar() {
+        let valido = true;
+
+        if (nome.value === "") {
+          errorName.innerText = "Nome obrigatorio";
+          valido = false;
+        } else {
+          errorName.innerText = "";
+        }
+
+        // validacao do campo email
+        if (!regexEmail.test(email.value)) {
+          errorEmail.innerText = "Email invalido";
+          valido = false;
+        } else {
+          errorEmail.innerText = "";
+        }
+
+        // desafio: criar validacao do campo senha
+
+        botao.disabled = !valido;
+
+        nome.addEventListener("input", validar);
+        email.addEventListener("input", validar);
+        senha.addEventListener("input", validar);
+
+        if (!regexSenha.test(senha.value)) {
+          errorSenha.innerText = "Senha invalida";
+          valido = false;
+        } else {
+          errorSenha.innerText = "";
+        }
+      }
     </script>
-</body>
+  </body>
 </html>
