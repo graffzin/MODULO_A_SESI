@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="=pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Validação</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="nome" placeholder="Nome">
+        <p id="errorName" ></p>
+
+        <input type="email" id="email" placeholder="Email">
+        <p id="errorEmail"></p>
+
+        <input type="password" id="password" placeholder="Senha">
+        <p id="errorSenha"></p>
+
+        <button id="botao" disabled>Enviar</button>''
+    </form>
+
+    <script>
+        const nome = document.getElementById("nome");
+        const email = document.getElementsById("email");
+        const senha = document.getElementsById("senha");
+        const botao = document.getElementsById("botao");
+    </script>
+</body>
+</html>
